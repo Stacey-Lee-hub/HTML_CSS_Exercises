@@ -1,0 +1,108 @@
+:root {
+    font-size: 62.5%
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 2rem;
+}
+h1 {
+    font-size: 5rem;
+    text-align: center;
+}
+
+/* BUTTON */
+.fliter_buttons {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    flex-wrap: wrap;
+}
+
+button{
+    padding: 1rem 2rem;
+    margin: 1rem;
+    border: none;
+    border-radius: .8rem;
+    font-size: 2rem;
+    background-color: cornflowerblue;
+    color: white;
+    cursor: pointer;
+}
+
+.filter-btn.active,
+.fliter-btn:hover {
+    background-color: rgb(54, 108, 207);
+    transition: 02s ease;
+}
+
+/* GALLERY */
+.gallery {
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 .2rem .6rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.card-title,
+.card-catergory {
+    font-size: 4rem;
+    text-align: center;
+    padding: .5rem 0;
+}
+
+.card-catergory {
+    color: #777;
+}
+
+/* OVERLAY */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    padding: 1rem;
+}
+
+.card:hover .overlay {
+    transform: translateY(0);
+}
+
+.card.hide {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

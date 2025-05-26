@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 2</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Gallery</h1>
+    </header>
+    <div class="fliter_buttons">
+      <button class="fliter-btn active" onclick="filterSelection('all')">
+        Show all
+      </button>
+      <button class="fliter-btn" onclick="filterSelection('landscape')">
+        Landscapes
+      </button>
+      <button class="fliter-btn" onclick="filterSelection('portrait')">
+        Portraits
+      </button>
+      <button class="fliter-btn" onclick="filterSelection('architecture')">
+        Architecure
+      </button>
+    </div>
+    <div class="gallery">
+      <!-- Landscapes -->
+      <div class="card" data-catergory="landscape">
+        <img src="landscape.jpg" alt="landscape image" />
+        <p class="card-title">Mountains</p>
+        <p class="card-catergory">Landscape</p>
+        <p class="overlay">Landscape of mountains</p>
+      </div>
+      <div class="card" data-catergory="landscape">
+        <img src="landscape.jpg" alt="landscape image" />
+        <p class="card-title">Mountains</p>
+        <p class="card-catergory">Landscape</p>
+        <p class="overlay">Landscape of mountains</p>
+      </div>
+      <div class="card" data-catergory="landscape">
+        <img src="landscape.jpg" alt="landscape image" />
+        <p class="card-title">Mountains</p>
+        <p class="card-catergory">Landscape</p>
+        <p class="overlay">Landscape of mountains</p>
+      </div>
+      <div class="card" data-catergory="landscape">
+        <img src="landscape.jpg" alt="landscape image" />
+        <p class="card-title">Mountains</p>
+        <p class="card-catergory">Landscape</p>
+        <p class="overlay">Landscape of mountains</p>
+      </div>
+
+      <!-- Portraits -->
+      <div class="card" data-catergory="portrait">
+        <img src="portrait.jpg" alt="portrait image" />
+        <p class="card-title">Model</p>
+        <p class="card-catergory">Portrait</p>
+        <p class="overlay">Portrait of model</p>
+      </div>
+      <div class="card" data-catergory="portrait">
+        <img src="portrait.jpg" alt="portrait image" />
+        <p class="card-title">Model</p>
+        <p class="card-catergory">Portrait</p>
+        <p class="overlay">Portrait of model</p>
+      </div>
+      <div class="card" data-catergory="portrait">
+        <img src="portrait.jpg" alt="portrait image" />
+        <p class="card-title">Model</p>
+        <p class="card-catergory">Portrait</p>
+        <p class="overlay">Portrait of model</p>
+      </div>
+      <div class="card" data-catergory="portrait">
+        <img src="portrait.jpg" alt="portrait image" />
+        <p class="card-title">Model</p>
+        <p class="card-catergory">Portrait</p>
+        <p class="overlay">Portrait of model</p>
+      </div>
+
+      <!-- Architecture -->
+      <div class="card" data-catergory="architecture">
+        <img src="architecture.jpg" alt="architecture image" />
+        <p class="card-title">Sacré-Cœur Basilica</p>
+        <p class="card-catergory">Architecture</p>
+        <p class="overlay">sacré-cœur basilica's architecture</p>
+      </div>
+      <div class="card" data-catergory="architecture">
+        <img src="architecture.jpg" alt="architecture image" />
+        <p class="card-title">Sacré-Cœur Basilica</p>
+        <p class="card-catergory">Architecture</p>
+        <p class="overlay">sacré-cœur basilica's architecture</p>
+      </div>
+      <div class="card" data-catergory="architecture">
+        <img src="architecture.jpg" alt="architecture image" />
+        <p class="card-title">Sacré-Cœur Basilica</p>
+        <p class="card-catergory">Architecture</p>
+        <p class="overlay">sacré-cœur basilica's architecture</p>
+      </div>
+      <div class="card" data-catergory="architecture">
+        <img src="architecture.jpg" alt="architecture image" />
+        <p class="card-title">Sacré-Cœur Basilica</p>
+        <p class="card-catergory">Architecture</p>
+        <p class="overlay">sacré-cœur basilica's architecture</p>
+      </div>
+    </div>
+
+    <!-- JS Button filter -->
+    <script>
+      function filterSelection(category) {
+        const cards = document.querySelectorAll(".card");
+        const buttons = document.querySelectorAll(".fliter-btn");
+
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+
+        cards.forEach((card) => {
+          const cardCategory = card.getAttribute("data-catergory");
+          if (category === "all" || category === cardCategory) {
+            card.classList.remove("hide");
+          } else {
+            card.classList.add("hide");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
