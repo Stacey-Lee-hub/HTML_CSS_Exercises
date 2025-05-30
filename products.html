@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise 3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Loading Animation -->
+   <div class="spinner-wrapper">
+    <div class="spinner"></div>
+   </div>
+
+  <nav class="navbar">
+    <div class="logo">MySite</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span class="bar top-bar"></span>
+      <span class="bar middle-bar"></span>
+      <span class="bar bottom-bar"></span>
+    </div>
+    <ul class="menu" id="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Discover Our Latest Products</h1>
+      <p>Affordable and fashionable</p>
+      <a href="#products" class="cta-button">Shop Now</a>
+    </div>
+  </header>
+
+  <!-- Products -->
+  <section class="products" id="products">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <div class="product-item">
+        <img src="https://cdn.pixabay.com/photo/2016/11/08/12/49/wedding-gifts-1808235_1280.jpg" alt="product image" />
+        <p class="product">Rings</p>
+        <p class="price">R50</p>
+      </div>
+      <div class="product-item">
+        <img src="https://cdn.pixabay.com/photo/2016/11/08/12/49/wedding-gifts-1808235_1280.jpg" alt="product image" />
+        <p class="product">Rings</p>
+        <p class="price">R50</p>
+      </div>
+      <div class="product-item">
+        <img src="https://cdn.pixabay.com/photo/2016/11/08/12/49/wedding-gifts-1808235_1280.jpg" alt="product image" />
+        <p class="product">Rings</p>
+        <p class="price">R50</p>
+      </div>
+      <div class="product-item">
+        <img src="https://cdn.pixabay.com/photo/2016/11/08/12/49/wedding-gifts-1808235_1280.jpg" alt="product image" />
+        <p class="product">Rings</p>
+        <p class="price">R50</p>
+      </div>
+      <div class="product-item">
+        <img src="https://cdn.pixabay.com/photo/2016/11/08/12/49/wedding-gifts-1808235_1280.jpg" alt="product image" />
+        <p class="product">Rings</p>
+        <p class="price">R50</p>
+      </div>
+      <div class="product-item">
+        <img src="https://cdn.pixabay.com/photo/2016/11/08/12/49/wedding-gifts-1808235_1280.jpg" alt="product image" />
+        <p class="product">Rings</p>
+        <p class="price">R50</p>
+      </div>
+    </div>
+  </section>
+  <script>
+    setTimeout(() => {
+    const spinner = document.querySelector(".spinner-wrapper");
+    spinner.style.opacity = "0";
+    spinner.style.transition = "opacity 0.4s ease";
+    setTimeout(() => {
+      spinner.style.display = "none";
+    }, 400);
+  }, 1000);
+
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    toggle.addEventListener("click", () => {
+      toggle.classList.toggle("open");
+      menu.classList.toggle("open");
+    });
+  </script>
+</body>
+
+</html>
